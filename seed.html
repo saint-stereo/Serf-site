@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SERF Seed Generator</title>
+  <style>
+    body { background: #000; color: #fff; text-align: center; margin: 0; font-family: monospace; }
+    canvas { border: 1px solid #444; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>SERF: Seed Generator</h1>
+  <canvas id="seed" width="800" height="800"></canvas>
+  <script>
+    const canvas = document.getElementById('seed');
+    const ctx = canvas.getContext('2d');
+    const sides = 512;
+    const r = 380;
+    const center = { x: 400, y: 400 };
+
+    for (let i = 0; i < sides; i++) {
+      const a = (2 * Math.PI / sides) * i;
+      const x = center.x + r * Math.cos(a);
+      const y = center.y + r * Math.sin(a);
+      ctx.beginPath();
+      ctx.moveTo(center.x, center.y);
+      ctx.lineTo(x, y);
+      ctx.strokeStyle = 'white';
+      ctx.stroke();
+    }
+  </script>
+</body>
+</html>
