@@ -28,6 +28,7 @@ export default function Home() {
         >
           View Recent Signals
         </a>
+        <a href="/seed">🌀 Launch the Seed Generator</a>
       </div>
     </div>
   );
